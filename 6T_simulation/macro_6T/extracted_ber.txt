@@ -1,0 +1,6 @@
+SNM_mV=287.3615
+BER=7.032766e-31
+sigma_mV=25.0
+VDD=1.0
+corner=TT
+temp_C=27

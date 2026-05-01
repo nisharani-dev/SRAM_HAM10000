@@ -1,0 +1,59 @@
+[2026-04-03 07:16:53.187820] |==============================================================================|
+[2026-04-03 07:16:53.195230] |=========                      OpenRAM v1.2.49                       =========|
+[2026-04-03 07:16:53.209594] |=========                                                            =========|
+[2026-04-03 07:16:53.221889] |=========               VLSI Design and Automation Lab               =========|
+[2026-04-03 07:16:53.233346] |=========        Computer Science and Engineering Department         =========|
+[2026-04-03 07:16:53.246790] |=========            University of California Santa Cruz             =========|
+[2026-04-03 07:16:53.259582] |=========                                                            =========|
+[2026-04-03 07:16:53.272629] |=========          Usage help: openram-user-group@ucsc.edu           =========|
+[2026-04-03 07:16:53.284484] |=========        Development help: openram-dev-group@ucsc.edu        =========|
+[2026-04-03 07:16:53.298014] |=========                See LICENSE for license info                =========|
+[2026-04-03 07:16:53.313483] |==============================================================================|
+[2026-04-03 07:16:53.330809] ** Start: 04/03/2026 07:16:53
+[2026-04-03 07:16:53.347653] Technology: freepdk45
+[2026-04-03 07:16:53.364795] Total size: 2048 bits
+[2026-04-03 07:16:53.383304] Word size: 16
+Words: 128
+Banks: 1
+[2026-04-03 07:16:53.397243] RW ports: 1
+R-only ports: 0
+W-only ports: 0
+[2026-04-03 07:16:53.411384] Design supply routing skipped. Supplies will have multiple must-connect pins. (route_supplies=True to enable supply routing).
+[2026-04-03 07:16:53.424572] DRC/LVS/PEX is only run on the top-level design to save run-time (inline_lvsdrc=True to do inline checking).
+[2026-04-03 07:16:53.441603] DRC/LVS/PEX is disabled (check_lvsdrc=True to enable).
+[2026-04-03 07:16:53.456734] Characterization is disabled (using analytical delay models) (analytical_delay=False to simulate).
+[2026-04-03 07:16:53.473223] Words per row: None
+[2026-04-03 07:16:53.487167] Output files are: 
+[2026-04-03 07:16:53.501665] /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.lvs
+[2026-04-03 07:16:53.515197] /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.sp
+[2026-04-03 07:16:53.537539] /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.v
+[2026-04-03 07:16:53.552587] /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.lib
+[2026-04-03 07:16:53.568134] /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.py
+[2026-04-03 07:16:53.582911] /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.html
+[2026-04-03 07:16:53.597796] /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.log
+[2026-04-03 07:16:53.613098] /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.lef
+[2026-04-03 07:16:53.629944] /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.gds
+[2026-04-03 07:17:00.779313] ** Submodules: 6.9 seconds
+[2026-04-03 07:17:00.821987] ** Placement: 0.0 seconds
+[2026-04-03 07:18:24.576376] ** Routing: 83.8 seconds
+[2026-04-03 07:18:24.584184] ** Verification: 0.0 seconds
+[2026-04-03 07:18:24.599726] ** SRAM creation: 90.7 seconds
+[2026-04-03 07:18:24.614859] SP: Writing to /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.sp
+[2026-04-03 07:18:24.790685] ** Spice writing: 0.2 seconds
+[2026-04-03 07:18:24.794546] DELAY: Writing stimulus...
+[2026-04-03 07:18:25.070196] ** DELAY: 0.3 seconds
+[2026-04-03 07:18:25.135740] GDS: Writing to /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.gds
+[2026-04-03 07:18:25.626343] ** GDS: 0.5 seconds
+[2026-04-03 07:18:25.630443] LEF: Writing to /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.lef
+[2026-04-03 07:18:25.660931] ** LEF: 0.0 seconds
+[2026-04-03 07:18:25.665432] LVS: Writing to /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.lvs.sp
+[2026-04-03 07:18:25.764574] ** LVS writing: 0.1 seconds
+[2026-04-03 07:18:25.780845] LIB: Characterizing... 
+[2026-04-03 07:18:28.302953] ** Characterization: 2.5 seconds
+[2026-04-03 07:18:28.325207] Config: Writing to /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.py
+[2026-04-03 07:18:28.329422] ** Config: 0.0 seconds
+[2026-04-03 07:18:28.471539] Datasheet: Writing to /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.html
+[2026-04-03 07:18:28.511947] ** Datasheet: 0.2 seconds
+[2026-04-03 07:18:28.515852] Verilog: Writing to /mnt/c/Users/agarw/OneDrive/Desktop/OpenRAM SAAS/OpenRAM/6T_simulation/macro_6T/sram_6T.v
+[2026-04-03 07:18:28.535820] ** Verilog: 0.0 seconds
+[2026-04-03 07:18:28.550735] ** End: 95.2 seconds
