@@ -68,39 +68,64 @@ A hardware-software co-simulation framework that evaluates the reliability of a 
 | Cycle time        | 0.614 ns               |
 | Access time       | 0.165 ns               |
 | Max frequency     | ~1.63 GHz              |
-| Leakage (macro)   | 2.314 µW               |
+| Leakage (macro)   | 2.314 mW               |
 
 ---
 
 ## Model & Dataset
 
-| Parameter     | Value                                      |
-|---------------|--------------------------------------------|
-| Model         | EfficientNet-B0 (timm)                     |
-| Parameters    | ~4.0 M                                     |
-| Float32 size  | ~15.3 MB                                   |
-| Float16 size  | ~7.7 MB (2× compression)                   |
-| Dataset       | HAM10000 skin lesion (7 classes)           |
-| Test set      | 2,003 images                               |
-| Baseline acc  | 96.21% (float32)                           |
-| Baseline conf | 0.9846                                     |
+| Parameter      | Value                                      |
+|----------------|--------------------------------------------|
+| Model          | EfficientNet-B0 (timm)                     |
+| Parameters     | 4,016,515                                  |
+| Float32 size   | 15.32 MB                                   |
+| Float16 size   | 7.66 MB (2× compression)                   |
+| Dataset        | HAM10000 skin lesion (7 classes)           |
+| Test set       | 1,502 images                               |
+| Baseline acc   | 81.42% (float32)                           |
+| Baseline conf  | 0.9091                                     |
+| SW latency     | 20.33 ms                                   |
+| SW FPS         | 49.19                                      |
 
 ---
 
 ## Key Results (BER Sweep)
 
-| BER        | Accuracy | Bit Flips | HW FPS |
-|------------|----------|-----------|--------|
-| 7.03e-31   | 96.26%   | 0         | 47.65  |
-| 1e-20      | 96.26%   | 0         | 48.91  |
-| 1e-15      | 96.26%   | 0         | 47.35  |
-| 1e-10      | 96.26%   | 0         | 47.83  |
-| 1e-7       | 96.26%   | 2         | 48.59  |
-| 1e-5       | degrades | increases | —      |
-| 1e-3       | degrades | increases | —      |
-| 1e-2       | degrades | increases | —      |
+| BER          | Accuracy | Bit Flips | Total Latency (ms) | HW FPS |
+|--------------|-----------|-----------|--------------------|--------|
+| 7.03e-31     | 81.49%    | 0         | 20.014             | 49.97  |
+| 1e-20        | 81.49%    | 0         | 19.990             | 50.02  |
+| 1e-15        | 81.49%    | 0         | 20.194             | 49.52  |
+| 1e-10        | 81.49%    | 0         | 19.641             | 50.91  |
+| 1e-7         | 81.49%    | 6         | 20.013             | 49.97  |
+| 1e-5         | 66.84%    | 631       | 19.705             | 50.75  |
+| 1e-4         | 3.46%     | 6,333     | 19.615             | 50.98  |
+| 1e-3         | 3.46%     | 63,876    | 19.724             | 50.70  |
+| 1e-2         | 3.46%     | 642,582   | 19.875             | 50.32  |
 
-The model is robust to SRAM bit errors up to BER ≈ 10⁻⁷ with zero accuracy degradation, consistent with the high SNM (287.36 mV) of the FreePDK45 6T cell.
+The model maintains stable accuracy under SRAM bit errors up to a BER of **10⁻⁵**, after which accuracy degrades sharply. At BER ≥ 10⁻⁴, the model collapses to **3.46%** — the majority-class prior — indicating complete inference failure. The high static noise margin (287.36 mV) of the FreePDK45 6T cell places the nominal operating BER at 7.03×10⁻³¹, far below the degradation threshold.
+
+---
+
+## Hardware-Aware Metrics at Nominal BER
+
+| Metric               | Value           |
+|----------------------|-----------------|
+| SNM                  | 287.36 mV       |
+| Nominal BER          | 7.03 × 10⁻³¹   |
+| Float16 accuracy     | 81.49%          |
+| Float32 baseline acc | 81.42%          |
+| Accuracy drop (F16)  | +0.07% (gain)   |
+| HW latency           | 2.466 ms        |
+| SW latency           | 17.548 ms       |
+| Total latency        | 20.014 ms       |
+| Throughput (HW FPS)  | 49.97 FPS       |
+| Float32 model size   | 15.32 MB        |
+| Float16 model size   | 7.66 MB         |
+| Compression ratio    | 2×              |
+| Leakage power        | 4.538 mW        |
+| Max frequency        | 1.629 GHz       |
+| F16 vs F32 speedup   | 1.16×           |
 
 ---
 
